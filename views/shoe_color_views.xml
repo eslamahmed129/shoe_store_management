@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree View -->
+    <record id="view_shoe_color_tree" model="ir.ui.view">
+        <field name="name">shoe.color.tree</field>
+        <field name="model">shoe.color</field>
+        <field name="arch" type="xml">
+            <tree string="Shoe Colors">
+                <field name="name"/>
+                <field name="code" widget="color"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_shoe_color_form" model="ir.ui.view">
+        <field name="name">shoe.color.form</field>
+        <field name="model">shoe.color</field>
+        <field name="arch" type="xml">
+            <form string="Shoe Color">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code" widget="color"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_shoe_color" model="ir.actions.act_window">
+        <field name="name">Shoe Colors</field>
+        <field name="res_model">shoe.color</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first shoe color
+            </p>
+        </field>
+    </record>
+
+</odoo>

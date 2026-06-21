@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree View -->
+    <record id="view_shoe_size_tree" model="ir.ui.view">
+        <field name="name">shoe.size.tree</field>
+        <field name="model">shoe.size</field>
+        <field name="arch" type="xml">
+            <tree string="Shoe Sizes">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="eu_size"/>
+                <field name="us_size"/>
+                <field name="uk_size"/>
+                <field name="cm_size"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_shoe_size_form" model="ir.ui.view">
+        <field name="name">shoe.size.form</field>
+        <field name="model">shoe.size</field>
+        <field name="arch" type="xml">
+            <form string="Shoe Size">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="sequence"/>
+                            <field name="active"/>
+                        </group>
+                        <group>
+                            <field name="eu_size"/>
+                            <field name="us_size"/>
+                            <field name="uk_size"/>
+                            <field name="cm_size"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_shoe_size" model="ir.actions.act_window">
+        <field name="name">Shoe Sizes</field>
+        <field name="res_model">shoe.size</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first shoe size
+            </p>
+        </field>
+    </record>
+
+</odoo>
