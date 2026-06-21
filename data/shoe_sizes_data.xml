@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- EU Sizes -->
+        <record id="shoe_size_36" model="shoe.size">
+            <field name="name">36</field>
+            <field name="sequence">1</field>
+            <field name="eu_size">36</field>
+            <field name="us_size">5.5</field>
+            <field name="uk_size">3.5</field>
+            <field name="cm_size">23</field>
+        </record>
+
+        <record id="shoe_size_37" model="shoe.size">
+            <field name="name">37</field>
+            <field name="sequence">2</field>
+            <field name="eu_size">37</field>
+            <field name="us_size">6.5</field>
+            <field name="uk_size">4.5</field>
+            <field name="cm_size">23.5</field>
+        </record>
+
+        <record id="shoe_size_38" model="shoe.size">
+            <field name="name">38</field>
+            <field name="sequence">3</field>
+            <field name="eu_size">38</field>
+            <field name="us_size">7</field>
+            <field name="uk_size">5</field>
+            <field name="cm_size">24</field>
+        </record>
+
+        <record id="shoe_size_39" model="shoe.size">
+            <field name="name">39</field>
+            <field name="sequence">4</field>
+            <field name="eu_size">39</field>
+            <field name="us_size">8</field>
+            <field name="uk_size">6</field>
+            <field name="cm_size">24.5</field>
+        </record>
+
+        <record id="shoe_size_40" model="shoe.size">
+            <field name="name">40</field>
+            <field name="sequence">5</field>
+            <field name="eu_size">40</field>
+            <field name="us_size">8.5</field>
+            <field name="uk_size">6.5</field>
+            <field name="cm_size">25</field>
+        </record>
+
+        <record id="shoe_size_41" model="shoe.size">
+            <field name="name">41</field>
+            <field name="sequence">6</field>
+            <field name="eu_size">41</field>
+            <field name="us_size">9</field>
+            <field name="uk_size">7</field>
+            <field name="cm_size">25.5</field>
+        </record>
+
+        <record id="shoe_size_42" model="shoe.size">
+            <field name="name">42</field>
+            <field name="sequence">7</field>
+            <field name="eu_size">42</field>
+            <field name="us_size">9.5</field>
+            <field name="uk_size">8</field>
+            <field name="cm_size">26</field>
+        </record>
+
+        <record id="shoe_size_43" model="shoe.size">
+            <field name="name">43</field>
+            <field name="sequence">8</field>
+            <field name="eu_size">43</field>
+            <field name="us_size">10</field>
+            <field name="uk_size">9</field>
+            <field name="cm_size">27</field>
+        </record>
+
+        <record id="shoe_size_44" model="shoe.size">
+            <field name="name">44</field>
+            <field name="sequence">9</field>
+            <field name="eu_size">44</field>
+            <field name="us_size">10.5</field>
+            <field name="uk_size">9.5</field>
+            <field name="cm_size">27.5</field>
+        </record>
+
+        <record id="shoe_size_45" model="shoe.size">
+            <field name="name">45</field>
+            <field name="sequence">10</field>
+            <field name="eu_size">45</field>
+            <field name="us_size">11</field>
+            <field name="uk_size">10</field>
+            <field name="cm_size">28</field>
+        </record>
+
+        <!-- Default Colors -->
+        <record id="shoe_color_black" model="shoe.color">
+            <field name="name">Black</field>
+            <field name="code">#000000</field>
+        </record>
+
+        <record id="shoe_color_white" model="shoe.color">
+            <field name="name">White</field>
+            <field name="code">#FFFFFF</field>
+        </record>
+
+        <record id="shoe_color_brown" model="shoe.color">
+            <field name="name">Brown</field>
+            <field name="code">#8B4513</field>
+        </record>
+
+        <record id="shoe_color_red" model="shoe.color">
+            <field name="name">Red</field>
+            <field name="code">#FF0000</field>
+        </record>
+
+        <record id="shoe_color_blue" model="shoe.color">
+            <field name="name">Blue</field>
+            <field name="code">#0000FF</field>
+        </record>
+
+    </data>
+</odoo>
