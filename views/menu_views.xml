@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Main Menu -->
+    <menuitem id="menu_shoe_store_root"
+              name="Shoe Store"
+              sequence="10"
+              web_icon="shoe_store_management,static/description/icon.png"/>
+
+    <!-- Products Menu -->
+    <menuitem id="menu_shoe_products"
+              name="Products"
+              parent="menu_shoe_store_root"
+              sequence="10"/>
+
+    <menuitem id="menu_shoe_product_list"
+              name="Shoe Products"
+              parent="menu_shoe_products"
+              action="action_shoe_product"
+              sequence="10"/>
+
+    <!-- Configuration Menu -->
+    <menuitem id="menu_shoe_configuration"
+              name="Configuration"
+              parent="menu_shoe_store_root"
+              sequence="100"/>
+
+    <menuitem id="menu_shoe_sizes"
+              name="Shoe Sizes"
+              parent="menu_shoe_configuration"
+              action="action_shoe_size"
+              sequence="10"/>
+
+    <menuitem id="menu_shoe_colors"
+              name="Shoe Colors"
+              parent="menu_shoe_configuration"
+              action="action_shoe_color"
+              sequence="20"/>
+
+</odoo>
