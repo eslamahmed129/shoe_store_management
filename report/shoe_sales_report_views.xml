@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree View -->
+    <record id="view_shoe_sales_report_tree" model="ir.ui.view">
+        <field name="name">shoe.sales.report.tree</field>
+        <field name="model">shoe.sales.report</field>
+        <field name="arch" type="xml">
+            <tree string="Shoe Sales Analysis" create="false" delete="false">
+                <field name="date"/>
+                <field name="shoe_product_id"/>
+                <field name="size_id"/>
+                <field name="color_id"/>
+                <field name="qty_sold" sum="Total Quantity"/>
+                <field name="revenue" sum="Total Revenue"/>
+                <field name="cost" sum="Total Cost"/>
+                <field name="profit" sum="Total Profit"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Pivot View -->
+    <record id="view_shoe_sales_report_pivot" model="ir.ui.view">
+        <field name="name">shoe.sales.report.pivot</field>
+        <field name="model">shoe.sales.report</field>
+        <field name="arch" type="xml">
+            <pivot string="Shoe Sales Analysis">
+                <field name="shoe_product_id" type="row"/>
+                <field name="size_id" type="row"/>
+                <field name="qty_sold" type="measure"/>
+                <field name="revenue" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Graph View -->
+    <record id="view_shoe_sales_report_graph" model="ir.ui.view">
+        <field name="name">shoe.sales.report.graph</field>
+        <field name="model">shoe.sales.report</field>
+        <field name="arch" type="xml">
+            <graph string="Shoe Sales Analysis" type="bar">
+                <field name="shoe_product_id"/>
+                <field name="qty_sold" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_shoe_sales_report_search" model="ir.ui.view">
+        <field name="name">shoe.sales.report.search</field>
+        <field name="model">shoe.sales.report</field>
+        <field name="arch" type="xml">
+            <search string="Shoe Sales Analysis">
+                <field name="shoe_product_id"/>
+                <field name="size_id"/>
+                <field name="color_id"/>
+                <filter string="This Month" name="this_month"
+                        domain="[('date','&gt;=',(context_today()-relativedelta(day=1)).strftime('%Y-%m-%d'))]"/>
+                <filter string="Last Month" name="last_month"
+                        domain="[('date','&gt;=',(context_today()-relativedelta(months=1,day=1)).strftime('%Y-%m-%d')),
+                                ('date','&lt;',(context_today()-relativedelta(day=1)).strftime('%Y-%m-%d'))]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Product" name="group_product" context="{'group_by':'shoe_product_id'}"/>
+                    <filter string="Size" name="group_size" context="{'group_by':'size_id'}"/>
+                    <filter string="Color" name="group_color" context="{'group_by':'color_id'}"/>
+                    <filter string="Date" name="group_date" context="{'group_by':'date:month'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_shoe_sales_report" model="ir.actions.act_window">
+        <field name="name">Shoe Sales Analysis</field>
+        <field name="res_model">shoe.sales.report</field>
+        <field name="view_mode">tree,pivot,graph</field>
+        <field name="search_view_id" ref="view_shoe_sales_report_search"/>
+        <field name="context">{'search_default_this_month': 1}</field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="menu_shoe_reports"
+              name="Reports"
+              parent="menu_shoe_store_root"
+              sequence="50"/>
+
+    <menuitem id="menu_shoe_sales_report"
+              name="Sales Analysis"
+              parent="menu_shoe_reports"
+              action="action_shoe_sales_report"
+              sequence="10"/>
+
+</odoo>
