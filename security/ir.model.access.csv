@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_shoe_size_user,shoe.size.user,model_shoe_size,base.group_user,1,0,0,0
+access_shoe_size_manager,shoe.size.manager,model_shoe_size,sales_team.group_sale_manager,1,1,1,1
+access_shoe_color_user,shoe.color.user,model_shoe_color,base.group_user,1,0,0,0
+access_shoe_color_manager,shoe.color.manager,model_shoe_color,sales_team.group_sale_manager,1,1,1,1
+access_shoe_product_user,shoe.product.user,model_shoe_product,base.group_user,1,0,0,0
+access_shoe_product_salesperson,shoe.product.salesperson,model_shoe_product,sales_team.group_sale_salesman,1,1,1,0
+access_shoe_product_manager,shoe.product.manager,model_shoe_product,sales_team.group_sale_manager,1,1,1,1
+access_shoe_product_variant_user,shoe.product.variant.user,model_shoe_product_variant,base.group_user,1,0,0,0
+access_shoe_product_variant_salesperson,shoe.product.variant.salesperson,model_shoe_product_variant,sales_team.group_sale_salesman,1,1,1,0
+access_shoe_product_variant_manager,shoe.product.variant.manager,model_shoe_product_variant,sales_team.group_sale_manager,1,1,1,1
+access_shoe_sales_report_user,shoe.sales.report.user,model_shoe_sales_report,base.group_user,1,0,0,0
+access_shoe_sales_report_manager,shoe.sales.report.manager,model_shoe_sales_report,sales_team.group_sale_manager,1,1,1,1
